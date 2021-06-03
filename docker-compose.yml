@@ -1,0 +1,16 @@
+version: "3.9"
+    
+services:
+  wengoat:
+    image: webgoat/goatandwolf
+    ports:
+      - "${GOATPORT}:8080"
+      - "${WOLFPORT}:9090"
+    restart: always
+
+
+  dvwa:
+    image: vulnerables/web-dvwa
+    ports:
+      - "${DVWAPORT}:80"
+    restart: always
